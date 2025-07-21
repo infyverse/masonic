@@ -21,7 +21,7 @@ export function useContainerPosition(
 
   useLayoutEffect(() => {
     const { current } = elementRef;
-    if (current !== null) {
+    if (current !== null && document.fullscreenElement === null) {
       let offset = 0;
       let el = current;
 

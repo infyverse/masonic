@@ -39,7 +39,7 @@ export const createResizeObserver = trieMemoize(
     const updates: number[] = [];
 
     const update = rafSchd(() => {
-      if (updates.length > 0) {
+      if (updates.length > 0 && document.fullscreenElement === null) {
         // Updates the size/positions of the cell with the resize
         // observer updates
         positioner.update(updates);
